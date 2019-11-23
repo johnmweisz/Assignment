@@ -1,0 +1,99 @@
+@model Assignment.Models.Customer
+
+<div class="card-body text-right">
+    <button class="btn btn-secondary" onclick="location.href='@Url.Action("Index", "Customer")'">Back To List</button>
+</div>
+<div class="card-body">
+    <form asp-action="Add" asp-controller="Customer" method="post">
+        <div class="form-group row">
+            <label class="col-sm-2 col-form-label" asp-for="Name"></label>
+            <div class="col-sm-10">
+                <input class="form-control" asp-for="Name">
+            </div>
+            @if(ViewData.ModelState["Name"] != null && ViewData.ModelState["Name"].Errors.Any()) {
+                <div class="alert alert-warning w-100" role="alert">
+                    <span asp-validation-for="Name"></span>
+                </div>
+            }
+        </div>
+        <div class="form-group row">
+            <label class="col-sm-2 col-form-label" asp-for="Email"></label>
+            <div class="col-sm-10">
+                <input class="form-control" asp-for="Email">
+            </div>
+            @if(ViewData.ModelState["Email"] != null && ViewData.ModelState["Email"].Errors.Any()) {
+                <div class="alert alert-warning w-100" role="alert">
+                    <span asp-validation-for="Email"></span>
+                </div>
+            }
+        </div>
+        <fieldset class="form-group">
+            <div class="row">
+                <label class="col-form-label col-sm-2 pt-0" asp-for="Gender"></label>
+                <div class="col-sm-10">
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" asp-for="Gender" value="M"/>Male<br/>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" asp-for="Gender" value="F"/>Female<br/>
+                    </div>
+                </div>
+                @if(ViewData.ModelState["Gender"] != null && ViewData.ModelState["Gender"].Errors.Any()) {
+                    <div class="alert alert-warning w-100" role="alert">
+                        <span asp-validation-for="Gender"></span>
+                    </div>
+                }
+            </div>
+        </fieldset>
+        <div class="form-group row">
+            <label class="col-sm-2 col-form-label" asp-for="Registered"></label>
+            <div class="col-sm-10">
+                <input class="form-control" asp-for="Registered">
+            </div>
+            @if(ViewData.ModelState["Registered"] != null && ViewData.ModelState["Registered"].Errors.Any()) 
+            {
+                <div class="alert alert-warning w-100" role="alert">
+                    <span asp-validation-for="Registered"></span>
+                </div>
+            }
+        </div>
+        <fieldset class="form-group">
+            <div class="row">
+            <label class="col-form-label col-sm-2 pt-0" asp-for="DaysAttending"></label>
+                <div class="col-sm-10">
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" asp-for="DayOne">Day One<br/>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" asp-for="DayTwo">Day Two<br/>                    
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" asp-for="DayThree">Day Three<br/>
+                    </div>
+                </div>
+                @if(ViewData.ModelState["DaysAttending"] != null && ViewData.ModelState["DaysAttending"].Errors.Any()) 
+                {
+                    <div class="alert alert-warning w-100" role="alert">
+                        <span asp-validation-for="DaysAttending"></span>
+                    </div>
+                }
+            </div>
+        </fieldset>
+        <div class="form-group row">
+            <label class="col-sm-2 col-form-label" asp-for="Request"></label>
+            <div class="col-sm-10">
+                <textarea class="form-control" asp-for="Request"></textarea>
+            </div>
+            @if(ViewData.ModelState["Request"] != null && ViewData.ModelState["Request"].Errors.Any()) {
+                <div class="alert alert-warning w-100" role="alert">
+                    <span asp-validation-for="Request"></span>
+                </div>
+            }
+        </div>
+        <div class="form-group row">
+            <div class="col-sm-2">
+                <button class="btn btn-primary" type="submit">Submit</button>
+            </div>
+        </div>
+    </form>
+</div>

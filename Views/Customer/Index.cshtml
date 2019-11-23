@@ -1,0 +1,21 @@
+﻿<div class="card-body text-right">
+    <button class="btn btn-secondary" onclick="location.href='@Url.Action("Form", "Customer")'">+ Add User</button>
+</div>
+<div class="text-center">
+    <h1 class="card-title">List of Registered Users</h1>
+</div>
+<div class="card-body">
+    <table class="table">
+        <thead class="thead-light">
+            <tr>
+                <th scope="col">Name</th>
+                <th scope="col">Email</th>
+                <th scope="col">Gender</th>
+                <th scope="col">Date Registered</th>
+                <th scope="col">Selected Days</th>
+                <th scope="col">Request</th>
+            </tr>
+        </thead>
+        <tbody id="showData"></tbody>
+    </table>
+</div>
