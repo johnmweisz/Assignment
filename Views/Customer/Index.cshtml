@@ -34,21 +34,21 @@
     }
 
     var client = new HttpClient();
-    client.get('http://13.87.154.59:80/api/GetList', function(response) {
+    client.get('https://localhost:5001/api/GetList', function(response) {
         const customers = JSON.parse(response);
-        var entry = "";
+        var table = "";
 
         customers.forEach(row => {
-            entry += `<tr class="link-item">`;
-            entry += `<td>${row["Name"]}</td>`;
-            entry += `<td>${row["Email"]}</td>`;
-            entry += `<td>${row["Gender"]}</td>`;
-            entry += `<td>${row["DateRegistered"]}</td>`;
-            entry += `<td>${row["DaysAttending"]}</td>`;
-            entry += `<td>${row["Request"]}</td>`;
-            entry += `</tr>`;
+            table += `<tr class="link-item">`;
+            table += `<td>${row["Name"]}</td>`;
+            table += `<td>${row["Email"]}</td>`;
+            table += `<td>${row["Gender"]}</td>`;
+            table += `<td>${row["DateRegistered"]}</td>`;
+            table += `<td>${row["DaysAttending"]}</td>`;
+            table += `<td>${row["Request"]}</td>`;
+            table += `</tr>`;
         });
 
-        document.getElementById("showData").innerHTML = entry;
+        document.getElementById("showData").innerHTML = table;
     });
 </script>
