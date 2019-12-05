@@ -34,7 +34,7 @@
     }
 
     var client = new HttpClient();
-    client.get('https://localhost:5001/api/GetList', function(response) {
+    client.get('/api/GetList', function(response) {
         const customers = JSON.parse(response);
         var table = "";
 
